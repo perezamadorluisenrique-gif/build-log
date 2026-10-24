@@ -1,0 +1,11 @@
+{
+  "user": "demo-user",
+  "site": {
+    "title": "Build log (fixture)",
+    "tagline": { "en": "Fixture data, not a real account.", "es": "Datos de prueba, no una cuenta real." }
+  },
+  "repos": { "exclude": [], "include_forks": false },
+  "plugins": { "ids": [] },
+  "lab": { "repos": [], "topic": "hidden-problems-lab", "name_pattern": "hidden[-_ ]?problems", "manual_apps": [] },
+  "backfill_weeks": 14
+}

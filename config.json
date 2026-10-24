@@ -1,0 +1,24 @@
+{
+  "user": "perezamadorluisenrique-gif",
+  "site": {
+    "title": "Build log",
+    "tagline": {
+      "en": "A dated lab notebook of what I ship in public: releases, commits and download numbers, rebuilt every week.",
+      "es": "Un cuaderno de laboratorio fechado con lo que publico: versiones, commits y descargas, reconstruido cada semana."
+    }
+  },
+  "repos": {
+    "exclude": [],
+    "include_forks": false
+  },
+  "plugins": {
+    "ids": []
+  },
+  "lab": {
+    "repos": [],
+    "topic": "hidden-problems-lab",
+    "name_pattern": "hidden[-_ ]?problems",
+    "manual_apps": []
+  },
+  "backfill_weeks": 26
+}
