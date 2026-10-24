@@ -4,7 +4,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export function makeClient({ token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN, base = process.env.GITHUB_API_URL || 'https://api.github.com' } = {}) {
   const headers = { accept: 'application/vnd.github+json', 'user-agent': 'build-log', 'x-github-api-version': '2022-11-28' };
-  if (token) headers.authorization = `Bearer ${token}`;
+  // the token only goes to the API host: raw.githubusercontent.com answers 404 to an invalid Authorization header
+  const authFor = (url) => (token && url.startsWith(base) ? { authorization: `Bearer ${token}` } : {});
   const stats = { calls: 0 };
 
   async function request(path, { retries = 3, raw = false } = {}) {
@@ -13,7 +14,7 @@ export function makeClient({ token = process.env.GITHUB_TOKEN || process.env.GH_
       let res;
       try {
         stats.calls++;
-        res = await fetch(url, { headers });
+        res = await fetch(url, { headers: { ...headers, ...authFor(url) } });
       } catch (err) {
         if (attempt >= retries) throw new Error(`network error for ${url}: ${err.message}`);
         await sleep(500 * 2 ** attempt);

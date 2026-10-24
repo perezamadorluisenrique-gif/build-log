@@ -1,0 +1,86 @@
+name: weekly
+
+# Every Monday 06:17 UTC: snapshot the week that just ended, rebuild, publish the site branch.
+# Run it by hand from the Actions tab (workflow_dispatch) to re-run a week or to try a dry run.
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      week:
+        description: 'Week to snapshot: last (default), current, or e.g. 2026-W43. Re-running a week overwrites only that snapshot.'
+        required: false
+        default: 'last'
+      backfill:
+        description: 'Also backfill past weeks from commit/release history (skips weeks that already have a snapshot)'
+        type: boolean
+        default: false
+      dry_run:
+        description: 'Fetch and build, but do not commit the snapshot or deploy'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-log
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Backfill past weeks (first run, or when asked)
+        if: ${{ inputs.backfill || hashFiles('data/*.json') == '' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/backfill.mjs
+
+      - name: Fetch this week's snapshot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WEEK: ${{ inputs.week || 'last' }}
+        run: node scripts/fetch.mjs --week "$WEEK"
+
+      - name: Commit snapshot
+        if: ${{ !inputs.dry_run }}
+        env:
+          WEEK: ${{ inputs.week || 'last' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "data: snapshot (week: $WEEK) [skip ci]"
+            git push
+          fi
+
+      - name: Build site
+        run: |
+          node scripts/build.mjs --out dist
+          node scripts/check-site.mjs dist
+
+      - name: Deploy to gh-pages
+        if: ${{ !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd dist
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "site: build of ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages

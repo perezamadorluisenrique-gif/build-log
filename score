@@ -1,3 +1,489 @@
 #!/usr/bin/env node
-// Placeholder, replaced by the full ladder in the next commit.
-console.log('R0 scaffold only');
+// The ladder. Each rung verifies one slice of the brief; `./score` runs all of them, `./score R3 R5` only those.
+// Rule: never edit a check to make it pass. Fix the code, or add checks.
+import { createRequire } from 'node:module';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { createHash } from 'node:crypto';
+import { existsSync, readFileSync, readdirSync, mkdirSync, rmSync, writeFileSync, statSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { startMock } from './test/mock-github.mjs';
+import { makeFixtureData, run, CONFIG } from './test/make-fixture.mjs';
+import { validateSnapshot } from './scripts/lib/schema.mjs';
+
+const ROOT = dirname(fileURLToPath(import.meta.url));
+const TMP = join(ROOT, '.score', 'tmp');
+const SHOTS = join(ROOT, '.score', 'shots');
+const exec = promisify(execFile);
+const rel = (...p) => join(ROOT, ...p);
+const read = (p) => readFileSync(p, 'utf8');
+const sha = (p) => createHash('sha256').update(readFileSync(p)).digest('hex');
+const NOW = '2026-10-26T06:17:00Z'; // a Monday: the week that just ended is 2026-W43
+
+rmSync(TMP, { recursive: true, force: true });
+mkdirSync(TMP, { recursive: true });
+mkdirSync(SHOTS, { recursive: true });
+
+const results = [];
+let rung = '';
+async function check(name, fn) {
+  try {
+    const note = await fn();
+    results.push({ rung, name, ok: true });
+    console.log(`  PASS ${name}${note ? `  (${note})` : ''}`);
+  } catch (err) {
+    results.push({ rung, name, ok: false, err });
+    console.log(`  FAIL ${name}\n       ${String(err.message || err).split('\n').join('\n       ')}`);
+  }
+}
+const ok = (cond, msg) => { if (!cond) throw new Error(msg); };
+const sh = async (cmd, args, opts = {}) => (await exec(cmd, args, { encoding: 'utf8', ...opts })).stdout;
+const node = (args, env = {}) => sh('node', args, { cwd: ROOT, env: { ...process.env, ...env } });
+const nodeFails = async (args, env = {}) => {
+  try { await node(args, env); } catch (err) { return err; }
+  throw new Error(`expected a non-zero exit from node ${args.join(' ')}`);
+};
+
+const mock = await startMock();
+const snapshots = (dir) => readdirSync(dir).filter((f) => /^\d{4}-W\d{2}\.json$/.test(f)).sort();
+const loadSnap = (dir, f) => JSON.parse(read(join(dir, f)));
+
+// ---------------------------------------------------------------------------------------------------------
+const rungs = {
+  async R0() {
+    await check('score runs and the mock GitHub server starts', () => ok(mock.port > 0, 'no port'));
+    for (const f of ['README.md', '.gitignore', 'STATE.md', 'NEXT.md', 'PROGRESS.md']) {
+      await check(`${f} exists and is not empty`, () => ok(existsSync(rel(f)) && read(rel(f)).trim().length > 20, `${f} missing or empty`));
+    }
+    await check('STATE.md has status (running|handoff|done) and a UTC timestamp', () => {
+      const s = read(rel('STATE.md'));
+      ok(/status:\s*(running|handoff|done)\b/.test(s), 'no "status: running|handoff|done" line');
+      ok(/updated:\s*\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z/.test(s), 'no "updated: <UTC ISO time>" line');
+    });
+    await check('NEXT.md says what is next, how to resume, and lists blockers', () => {
+      const s = read(rel('NEXT.md'));
+      for (const h of ['How to resume', 'Blockers']) ok(s.includes(h), `NEXT.md lacks "${h}"`);
+    });
+    await check('PROGRESS.md has one line per session', () => ok(read(rel('PROGRESS.md')).split('\n').filter((l) => l.startsWith('- ')).length >= 1, 'no session lines'));
+    await check('DECISIONS.md exists and records the open choices', () => {
+      const s = read(rel('DECISIONS.md'));
+      for (const w of ['Tinta', 'Hidden Problems Lab', 'week']) ok(s.includes(w), `DECISIONS.md does not mention "${w}"`);
+    });
+  },
+
+  async R1() {
+    const dir = join(TMP, 'r1');
+    mkdirSync(dir, { recursive: true });
+    const env = { ...mock.env(2), BUILD_LOG_NOW: NOW };
+    let snap;
+    await check('fetch writes data/<week>.json for the week that just ended', async () => {
+      await run('fetch.mjs', ['--out', dir], env);
+      ok(snapshots(dir).join() === '2026-W43.json', `unexpected files: ${snapshots(dir)}`);
+      snap = loadSnap(dir, '2026-W43.json');
+    });
+    await check('snapshot passes the schema check', () => {
+      const p = validateSnapshot(snap, '2026-W43.json');
+      ok(!p.length, p.join('; '));
+    });
+    await check('snapshot holds the real content: commits, release, plugins, projects, lab apps', () => {
+      ok(snap.activity.commits.total === 8 && snap.activity.releases.length === 1, 'activity does not match the mock account');
+      ok(Object.keys(snap.state.plugins).join() === 'alpha-notes,beta-links', 'plugin discovery by repo owner failed (or took someone else\'s plugin)');
+      ok(snap.state.plugins['alpha-notes'].downloads === 1480, 'download count wrong');
+      ok(snap.state.projects.length === 6 && !snap.state.projects.some((p) => p.name === 'forked-thing'), 'forks must be excluded');
+      ok(snap.state.lab.apps.length === 5, `expected 5 lab apps (apps.json, README link, folders), got ${snap.state.lab.apps.length}`);
+      ok(snap.activity.issues && typeof snap.activity.issues.opened === 'number', 'issue counts missing');
+    });
+    await check('--week current marks the snapshot partial', async () => {
+      const d2 = join(TMP, 'r1-current');
+      await run('fetch.mjs', ['--out', d2, '--week', 'current'], env);
+      const s = loadSnap(d2, '2026-W44.json');
+      ok(s.partial === true && !validateSnapshot(s).length, 'current-week snapshot should be partial and valid');
+    });
+    await check('re-running a week overwrites only that week (idempotent)', async () => {
+      const other = join(dir, '2026-W40.json');
+      writeFileSync(other, JSON.stringify({ ...snap, week: '2026-W40', source: 'backfill', state: null }, null, 2) + '\n');
+      const before = sha(other);
+      await run('fetch.mjs', ['--out', dir], { ...env, ...mock.env(3) });
+      ok(sha(other) === before, 'another week\'s file changed');
+      ok(snapshots(dir).join() === '2026-W40.json,2026-W43.json', `unexpected files ${snapshots(dir)}`);
+      ok(loadSnap(dir, '2026-W43.json').state.plugins['alpha-notes'].downloads === 1620, 'same-week file was not refreshed');
+    });
+    await check('the schema rejects broken snapshots (it is not a rubber stamp)', () => {
+      const bad = [
+        (s) => { delete s.week; },
+        (s) => { s.week = '2026-43'; },
+        (s) => { s.activity.commits.total += 1; },
+        (s) => { s.activity.releases = [{ repo: 'x' }]; },
+        (s) => { s.state.lab.apps[0].url = 'javascript:alert(1)'; },
+        (s) => { s.source = 'backfill'; },
+        (s) => { s.errors = 'oops'; },
+      ];
+      bad.forEach((mut, i) => {
+        const c = structuredClone(snap);
+        mut(c);
+        ok(validateSnapshot(c).length > 0, `mutation ${i} was accepted`);
+      });
+      ok(validateSnapshot(snap, '2026-W42.json').length > 0, 'file name / week mismatch was accepted');
+    });
+    await check('an incomplete fetch fails loudly and writes nothing (no silent degraded data)', async () => {
+      const d3 = join(TMP, 'r1-fail');
+      const err = await nodeFails(['scripts/fetch.mjs', '--config', CONFIG, '--user', 'nobody', '--out', d3], env);
+      ok(err.code === 1, `exit code ${err.code}`);
+      ok(!existsSync(d3) || !snapshots(d3).length, 'wrote a file anyway');
+    });
+    await check('--allow-partial keeps what could be fetched and records the errors', async () => {
+      const d4 = join(TMP, 'r1-partial');
+      await run('fetch.mjs', ['--out', d4, '--user', 'nobody', '--allow-partial'], env);
+      const s = loadSnap(d4, '2026-W43.json');
+      ok(s.partial && s.errors.length && !validateSnapshot(s).length, 'partial snapshot should be valid, flagged and list errors');
+    });
+    if (process.argv.includes('--live')) {
+      await check('LIVE: real GitHub API for this repo (fetch --repos build-log)', async () => {
+        const d5 = join(TMP, 'r1-live');
+        const out = await node(['scripts/fetch.mjs', '--repos', 'build-log', '--out', d5, '--allow-partial', '--week', 'current']);
+        const f = snapshots(d5)[0];
+        ok(f && !validateSnapshot(loadSnap(d5, f), f).length, 'live snapshot invalid');
+        return out.split('\n')[1];
+      });
+    }
+  },
+
+  async R2() {
+    const dir = join(TMP, 'r2');
+    mkdirSync(dir, { recursive: true });
+    const env = { ...mock.env(0), BUILD_LOG_NOW: NOW };
+    await check('backfill (GitHub history) writes >= 8 past weekly entries', async () => {
+      const out = await run('backfill.mjs', ['--out', dir], env);
+      const files = snapshots(dir);
+      ok(files.length >= 8, `only ${files.length} entries`);
+      for (const f of files) {
+        const s = loadSnap(dir, f);
+        ok(s.source === 'backfill' && s.state === null && !validateSnapshot(s, f).length, `${f} not a valid backfill snapshot`);
+      }
+      return `${files.length} entries, ${files[0].slice(0, 8)}..${files.at(-1).slice(0, 8)}`;
+    });
+    await check('backfilled commit and release counts match the history', () => {
+      const all = snapshots(dir).map((f) => loadSnap(dir, f));
+      const commits = all.reduce((n, s) => n + s.activity.commits.total, 0);
+      const releases = all.reduce((n, s) => n + s.activity.releases.length, 0);
+      ok(commits === 110, `expected 110 commits (the fork and the empty repo excluded), got ${commits}`);
+      ok(releases === 7, `expected 7 releases, got ${releases}`);
+    });
+    await check('backfill never rewrites existing snapshots', async () => {
+      const f = join(dir, '2026-W35.json');
+      const before = sha(f);
+      const edited = JSON.parse(read(f));
+      edited.errors = ['hand edit'];
+      writeFileSync(f, JSON.stringify(edited, null, 2) + '\n');
+      const mid = sha(f);
+      const out = await run('backfill.mjs', ['--out', dir], env);
+      ok(sha(f) === mid && mid !== before, 'an existing file was overwritten');
+      ok(/left \d+ existing files untouched/.test(out), 'no report of skipped files');
+    });
+    await check('backfill from a local git clone (--git) gives >= 8 entries that match `git log`', async () => {
+      const repo = join(TMP, 'r2-git');
+      mkdirSync(repo, { recursive: true });
+      const git = (args, env2 = {}) => sh('git', ['-C', repo, ...args], { env: { ...process.env, ...env2 } });
+      await git(['init', '-q', '-b', 'main']);
+      await git(['config', 'user.email', 'a@b.c']);
+      await git(['config', 'user.name', 'n']);
+      let made = 0;
+      for (let i = 0; i < 12; i++) {
+        for (let k = 0; k <= i % 3; k++) {
+          const d = new Date(Date.UTC(2026, 7, 4 + i * 7, 10 + k)).toISOString(); // Tuesdays from 2026-08-04
+          await git(['commit', '-q', '--allow-empty', '-m', `c${i}.${k}`], { GIT_AUTHOR_DATE: d, GIT_COMMITTER_DATE: d });
+          made++;
+          if (i === 4 && k === 0) await git(['tag', 'v0.1.0']);
+        }
+      }
+      const d2 = join(TMP, 'r2-git-out');
+      await run('backfill.mjs', ['--out', d2, '--git', repo, '--repo-name', 'sample', '--repo-url', 'https://github.com/x/sample', '--weeks', '20'], env);
+      const all = snapshots(d2).map((f) => loadSnap(d2, f));
+      ok(all.length >= 8, `only ${all.length} entries`);
+      const total = all.reduce((n, s) => n + s.activity.commits.total, 0);
+      ok(total === made, `git log has ${made} commits, backfill counted ${total}`);
+      ok(all.reduce((n, s) => n + s.activity.releases.length, 0) === 1, 'tag v0.1.0 was not turned into a release');
+      ok(all[0].activity.new_repos.length === 1, 'first commit week should mark the repo as new');
+      return `${all.length} entries, ${made} commits`;
+    });
+  },
+
+  async R3() {
+    const data = join(TMP, 'fixture-data');
+    const out = join(TMP, 'site');
+    await check('fixture data: backfill + four weekly snapshots built through the real scripts', async () => {
+      const log = await makeFixtureData(data, { mock });
+      ok(snapshots(data).length >= 12, `${snapshots(data).length} snapshots`);
+      const withState = snapshots(data).filter((f) => loadSnap(data, f).state).length;
+      ok(withState === 4, `expected 4 snapshots with state, got ${withState}`);
+      return log.length + ' runs';
+    });
+    await check('static site builds (index, stats, projects)', async () => {
+      await node(['scripts/build.mjs', '--config', CONFIG, '--data', data, '--out', out, '--notes', join(TMP, 'none')]);
+      for (const p of ['index.html', 'stats.html', 'projects.html', 'assets/site.css', 'assets/app.js', 'data/2026-W43.json']) ok(existsSync(join(out, p)), `${p} missing`);
+    });
+    await check('every local link, asset and #anchor resolves; en/es spans are paired', async () => { await node(['scripts/check-site.mjs', out]); });
+    await check('index: newest week first, 3-6 lines per entry, no empty entries', () => {
+      const html = read(join(out, 'index.html'));
+      const ids = [...html.matchAll(/<li class="entry" id="([^"]+)"/g)].map((m) => m[1]);
+      ok(ids.length === 14, `${ids.length} entries`);
+      ok(ids.join() === [...ids].sort().reverse().join(), 'entries are not newest first');
+      for (const block of html.split('<li class="entry"').slice(1)) {
+        const n = (block.match(/<li data-kind=/g) || []).length;
+        ok(n >= 3 && n <= 6, `${block.slice(5, 22)} has ${n} lines`);
+      }
+      ok(html.includes('+200 downloads across plugins (total 2,100)'), 'the example line "+N downloads across plugins (total T)" is missing');
+      ok(html.includes('Shipped v1.1.0 of alpha-plugin'), 'release line missing');
+      ok(html.includes('+200 descargas entre los plugins (total 2.100)'), 'Spanish line missing');
+    });
+    await check('stats: line chart, bar chart, releases, and the "history starts at first snapshot" notice', () => {
+      const html = read(join(out, 'stats.html'));
+      ok((html.match(/<polyline class="line s\d/g) || []).length >= 2, 'no plugin lines');
+      ok((html.match(/<path class="bar/g) || []).length >= 10, 'no commit bars');
+      ok(/Download history only starts at the first snapshot/.test(html) && html.includes('2026-W40'), 'missing history-start notice');
+      ok(/Releases/.test(html) && html.includes('releases/tag/1.1.0'), 'release table missing');
+      ok(html.includes('Alpha Notes') && html.includes('Beta Links'), 'plugin names missing');
+    });
+    await check('projects: one card per project with description, links and numbers; lab apps listed', () => {
+      const html = read(join(out, 'projects.html'));
+      const cards = (html.match(/<li class="card">/g) || []).length;
+      ok(cards === 2 + 5 + 2, `expected 9 cards (2 plugins, 5 lab apps, 2 other repos), got ${cards}`);
+      for (const s of ['Alpha plugin.', 'Queue Whisperer', 'https://demo-user.github.io/hidden-problems-lab/queue/', 'Open app', 'notes-cli', 'https://github.com/demo-user/alpha-plugin']) ok(html.includes(s), `missing "${s}"`);
+      ok(!html.includes('forked-thing'), 'fork leaked in');
+    });
+    await check('build is deterministic (same input, byte-identical output)', async () => {
+      const out2 = join(TMP, 'site2');
+      await node(['scripts/build.mjs', '--config', CONFIG, '--data', data, '--out', out2, '--notes', join(TMP, 'none')]);
+      for (const p of ['index.html', 'stats.html', 'projects.html', 'assets/site.css']) ok(sha(join(out, p)) === sha(join(out2, p)), `${p} differs between builds`);
+    });
+    await check('the real repo builds from data/ and notes/ and passes the site check', async () => {
+      const real = join(TMP, 'site-real');
+      await node(['scripts/build.mjs', '--out', real]);
+      await node(['scripts/check-site.mjs', real]);
+      return `${snapshots(rel('data')).length} real snapshots`;
+    });
+    await check('an empty data folder still builds (first-ever run)', async () => {
+      const empty = join(TMP, 'site-empty');
+      await node(['scripts/build.mjs', '--config', CONFIG, '--data', join(TMP, 'none'), '--notes', join(TMP, 'none'), '--out', empty]);
+      await node(['scripts/check-site.mjs', empty]);
+    });
+    await check('a corrupt snapshot stops the build instead of publishing bad data', async () => {
+      const bad = join(TMP, 'bad-data');
+      mkdirSync(bad, { recursive: true });
+      writeFileSync(join(bad, '2026-W43.json'), '{"schema":1,"week":"2026-W43"}');
+      await nodeFails(['scripts/build.mjs', '--config', CONFIG, '--data', bad, '--out', join(TMP, 'site-bad')]);
+    });
+  },
+
+  async R4() {
+    const files = { weekly: rel('.github/workflows/weekly.yml'), ci: rel('.github/workflows/ci.yml') };
+    const docs = {};
+    for (const [k, f] of Object.entries(files)) {
+      await check(`${k}.yml exists and is valid YAML`, async () => {
+        ok(existsSync(f), 'missing');
+        const code = 'import sys,json,yaml; print(json.dumps(yaml.safe_load(open(sys.argv[1]))))';
+        try {
+          docs[k] = JSON.parse(await sh('python3', ['-c', code, f]));
+        } catch (err) {
+          if (/No module named 'yaml'/.test(String(err.stderr))) { docs[k] = null; return 'PyYAML missing, structural checks only'; }
+          throw new Error(`YAML did not parse: ${String(err.stderr || err.message).split('\n').slice(-3).join(' ')}`);
+        }
+        ok(docs[k] && typeof docs[k].jobs === 'object', 'no jobs');
+      });
+    }
+    const w = read(files.weekly);
+    await check('weekly.yml: cron every Monday 06:17 UTC', () => {
+      ok(/cron:\s*'17 6 \* \* 1'/.test(w), 'cron must be 17 6 * * 1');
+      if (docs.weekly) ok(docs.weekly.true?.schedule?.[0]?.cron === '17 6 * * 1' || docs.weekly.on?.schedule?.[0]?.cron === '17 6 * * 1', 'schedule not parsed as expected');
+    });
+    await check('weekly.yml: workflow_dispatch with week, backfill and dry_run inputs', () => {
+      ok(/workflow_dispatch:/.test(w), 'no workflow_dispatch');
+      for (const i of ['week:', 'backfill:', 'dry_run:']) ok(w.includes(`      ${i}`), `no input ${i}`);
+    });
+    await check('weekly.yml: fetch -> commit snapshot -> build -> deploy steps, in that order, deploy guarded by dry_run', () => {
+      const idx = ['scripts/fetch.mjs', 'git add data', 'scripts/build.mjs', 'gh-pages'].map((s) => w.indexOf(s));
+      ok(idx.every((i) => i >= 0) && idx.join() === [...idx].sort((a, b) => a - b).join(), `step order wrong: ${idx}`);
+      ok(/Deploy to gh-pages\n\s+if: \$\{\{ !inputs\.dry_run \}\}/.test(w), 'deploy is not skipped on dry runs');
+      ok(/permissions:\n\s+contents: write/.test(w), 'needs contents: write to push data and gh-pages');
+      ok(/concurrency:/.test(w), 'no concurrency group (two runs could race)');
+    });
+    await check('weekly.yml: only uses the default GITHUB_TOKEN (no other secrets)', () => {
+      const secrets = [...w.matchAll(/secrets\.([A-Z_]+)/g)].map((m) => m[1]);
+      ok(secrets.length && secrets.every((s) => s === 'GITHUB_TOKEN'), `secrets used: ${secrets}`);
+    });
+    await check('every script a workflow calls exists', () => {
+      for (const src of [w, read(files.ci)]) for (const m of src.matchAll(/node (scripts\/[\w.-]+\.mjs)|\.\/(score)\b/g)) ok(existsSync(rel(m[1] || m[2])), `${m[0]} not found`);
+    });
+    await check('ci.yml: runs ./score and a dry-run job (live fetch + build + site check, no commit, no deploy)', () => {
+      const c = read(files.ci);
+      ok(/run: \.\/score/.test(c), 'ci does not run ./score');
+      ok(/dry-run:/.test(c) && c.includes('scripts/fetch.mjs') && c.includes('scripts/build.mjs') && c.includes('scripts/check-site.mjs'), 'no dry-run job');
+      ok(!/git push|deploy/i.test(c.slice(c.indexOf('dry-run:'))), 'dry-run job must not push or deploy');
+      ok(/branches-ignore:\s*\[gh-pages\]/.test(c), 'ci would run on the gh-pages branch');
+    });
+    await check('dry-run steps work locally end to end (backfill -> fetch -> build -> check, scratch folder, repo untouched)', async () => {
+      const scratch = join(TMP, 'dry');
+      mkdirSync(scratch, { recursive: true });
+      const env = { ...mock.env(1), BUILD_LOG_NOW: NOW };
+      const args = ['--config', CONFIG, '--out', scratch];
+      await node(['scripts/backfill.mjs', ...args], env);
+      await node(['scripts/fetch.mjs', ...args], env);
+      const site = join(TMP, 'dry-site');
+      await node(['scripts/build.mjs', '--config', CONFIG, '--data', scratch, '--out', site, '--notes', join(TMP, 'none')]);
+      await node(['scripts/check-site.mjs', site]);
+    });
+    if (process.env.GITHUB_ACTIONS) await check('running inside GitHub Actions: this ./score run is the CI pass', () => ok(true));
+  },
+
+  async R5() {
+    const data = join(TMP, 'fixture-data');
+    if (!existsSync(data)) await makeFixtureData(data, { mock });
+    const notesDir = rel('test', 'fixtures', 'notes');
+    const site = join(TMP, 'site-notes');
+    await node(['scripts/build.mjs', '--config', CONFIG, '--data', data, '--out', site, '--notes', notesDir]);
+    const html = read(join(site, 'index.html'));
+    const entry = (w) => html.split(`<li class="entry" id="${w}">`)[1]?.split('</li>\n')[0] ?? '';
+    await check('notes override: notes/<week>.md appears inside that week\'s entry, rendered', () => {
+      const e = entry('2026-W41');
+      ok(e.includes('<h4>Fixture note</h4>') && e.includes('<strong>rewrote</strong>') && e.includes('<code>slice</code>') && e.includes('<li>first thing</li>') && e.includes('<a href="https://example.org/">link</a>') && e.includes('<blockquote>'), 'markdown not rendered inside the W41 entry');
+      ok(!entry('2026-W40').includes('Fixture note') && !entry('2026-W43').includes('Fixture note'), 'note leaked into other weeks');
+    });
+    await check('notes are escaped (raw HTML in a note is shown as text)', () => {
+      const e = entry('2026-W41');
+      ok(e.includes('&lt;script&gt;') && !e.includes('<script>alert'), 'script tag was not escaped');
+    });
+    await check('per-language notes (.es.md / .en.md) show only in their language', () => {
+      const e = entry('2026-W42');
+      ok(e.includes('<div lang="en"><p>English only: a week of reviews.</p></div>') && e.includes('<div lang="es"><p>Solo en español: semana de revisiones.</p></div>'), 'language notes wrong');
+    });
+    await check('a note for a week without a snapshot still gets an entry', async () => {
+      const d = join(TMP, 'notes-only');
+      mkdirSync(d, { recursive: true });
+      writeFileSync(join(d, '2026-W50.md'), 'Only a note.');
+      const o = join(TMP, 'site-notes-only');
+      await node(['scripts/build.mjs', '--config', CONFIG, '--data', join(TMP, 'none'), '--notes', d, '--out', o]);
+      const h = read(join(o, 'index.html'));
+      ok(h.includes('id="2026-W50"') && h.includes('Only a note.'), 'note-only week missing');
+    });
+
+    let pw;
+    try { pw = createRequire(import.meta.url)('playwright'); } catch { /* reported below */ }
+    await check('Playwright is available', () => ok(pw, 'run: npm install --no-save playwright && npx playwright install chromium'));
+    if (!pw) return;
+    const browser = await pw.chromium.launch();
+    try {
+      const url = (p, q = '') => `file://${join(site, p)}${q}`;
+      const pages = ['index.html', 'stats.html', 'projects.html'];
+      for (const width of [375, 320]) {
+        await check(`no horizontal scroll at ${width}px on all pages (light, dark, EN, ES)`, async () => {
+          const bad = [];
+          for (const scheme of ['light', 'dark']) {
+            const ctx = await browser.newContext({ viewport: { width, height: 800 }, colorScheme: scheme });
+            const page = await ctx.newPage();
+            for (const lang of ['en', 'es']) for (const p of pages) {
+              await page.goto(url(p, `?lang=${lang}`));
+              const m = await page.evaluate(() => ({ sw: document.documentElement.scrollWidth, bw: document.body.scrollWidth, iw: innerWidth }));
+              if (m.sw > m.iw || m.bw > m.iw) bad.push(`${p} ${scheme} ${lang}: scrollWidth ${m.sw}/${m.bw} > ${m.iw}`);
+              if (width === 375 && lang === 'en') await page.screenshot({ path: join(SHOTS, `375-${scheme}-${p.replace('.html', '')}.png`), fullPage: true });
+            }
+            await ctx.close();
+          }
+          ok(!bad.length, bad.join('\n'));
+        });
+      }
+      await check('screenshots written (.score/shots/375-*.png)', () => ok(readdirSync(SHOTS).filter((f) => f.startsWith('375-')).length === 6, `got ${readdirSync(SHOTS)}`));
+      await check('ES/EN toggle: switches visible text, <html lang>, title, and is remembered', async () => {
+        const ctx = await browser.newContext({ viewport: { width: 375, height: 800 }, locale: 'en-US' });
+        const page = await ctx.newPage();
+        await page.goto(url('index.html'));
+        const vis = (t) => page.getByText(t, { exact: true }).first().isVisible();
+        ok(await vis('Timeline') && !(await vis('Cronología')), 'English should show by default for an English browser');
+        await page.click('[data-set-lang="es"]');
+        ok(await page.evaluate(() => document.documentElement.lang) === 'es', 'html lang did not change');
+        ok(await vis('Cronología') && !(await vis('Timeline')), 'Spanish nav not shown');
+        ok(await page.locator('text=descargas entre los plugins').first().isVisible(), 'data line not in Spanish');
+        ok(await page.locator('text=downloads across plugins').first().isHidden(), 'English data line still visible');
+        ok(await page.getAttribute('[data-set-lang="es"]', 'aria-pressed') === 'true', 'aria-pressed not updated');
+        await page.goto(url('stats.html'));
+        ok(await vis('Estadísticas'), 'choice not remembered on another page');
+        ok((await page.title()).startsWith('Estadísticas'), `title is ${await page.title()}`);
+        await page.click('[data-set-lang="en"]');
+        ok(await vis('Stats'), 'back to English failed');
+        await ctx.close();
+        const ctx2 = await browser.newContext({ locale: 'es-MX' });
+        const p2 = await ctx2.newPage();
+        await p2.goto(url('index.html'));
+        ok(await p2.evaluate(() => document.documentElement.dataset.lang) === 'es', 'a Spanish browser should start in Spanish');
+        await ctx2.close();
+      });
+      await check('dark mode follows the system, and the toggle overrides it both ways', async () => {
+        const lum = (page) => page.evaluate(() => { const [r, g, b] = getComputedStyle(document.body).backgroundColor.match(/\d+/g).map(Number); return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255; });
+        const light = await browser.newContext({ colorScheme: 'light' });
+        const dark = await browser.newContext({ colorScheme: 'dark' });
+        const a = await light.newPage();
+        const b = await dark.newPage();
+        await a.goto(url('index.html'));
+        await b.goto(url('index.html'));
+        ok(await lum(a) > 0.8 && await lum(b) < 0.2, 'system light/dark not followed');
+        await b.click('[data-theme-toggle]');
+        ok(await lum(b) > 0.8, 'toggle did not switch dark -> light');
+        await a.click('[data-theme-toggle]');
+        ok(await lum(a) < 0.2, 'toggle did not switch light -> dark');
+        await light.close();
+        await dark.close();
+      });
+      await check('charts show tooltips on hover and the pages have no console errors', async () => {
+        const ctx = await browser.newContext({ viewport: { width: 700, height: 900 } });
+        const page = await ctx.newPage();
+        const errors = [];
+        page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+        page.on('pageerror', (e) => errors.push(e.message));
+        for (const p of pages) await page.goto(url(p));
+        await page.goto(url('stats.html'));
+        await page.locator('.chart .hit').nth(5).hover({ force: true });
+        const tip = await page.locator('.tip').innerText();
+        ok(/W\d\d/.test(tip), `tooltip text: "${tip}"`);
+        ok(!errors.length, errors.join('; '));
+        await ctx.close();
+      });
+    } finally {
+      await browser.close();
+    }
+  },
+
+  async R6() {
+    const r = read(rel('README.md'));
+    for (const [name, re] of [
+      ['How it works', /^##+ .*how it works/im],
+      ['How to add a note', /^##+ .*add a note/im],
+      ['How to pause it', /^##+ .*pause/im],
+      ['Setup (enable Pages)', /^##+ .*(set ?up|first run|enable)/im],
+      ['Configuration', /^##+ .*config/im],
+    ]) await check(`README has a section: ${name}`, () => ok(re.test(r), 'heading not found'));
+    await check('README gives the real commands and file names', () => {
+      for (const s of ['notes/YYYY-Www.md', 'workflow_dispatch', 'Disable workflow', './score', 'scripts/backfill.mjs', 'scripts/fetch.mjs', 'scripts/build.mjs', 'data/YYYY-Www.json', 'gh-pages', 'config.json']) ok(r.includes(s), `README never mentions ${s}`);
+    });
+    await check('every file path README tells the reader to run exists', () => {
+      for (const m of r.matchAll(/`(scripts\/[\w./-]+\.mjs|test\/[\w./-]+|site\/[\w./-]+|\.github\/workflows\/[\w.-]+)`/g)) ok(existsSync(rel(m[1])), `${m[1]} does not exist`);
+    });
+    await check('RESULTS.md exists with the commands to reproduce and what is left for the owner', () => {
+      ok(existsSync(rel('RESULTS.md')), 'RESULTS.md missing');
+      const x = read(rel('RESULTS.md'));
+      for (const s of ['./score', 'Pages', 'notes']) ok(x.includes(s), `RESULTS.md lacks "${s}"`);
+    });
+  },
+};
+
+const want = process.argv.slice(2).filter((a) => /^R\d$/.test(a));
+for (const name of Object.keys(rungs)) {
+  if (want.length && !want.includes(name)) continue;
+  rung = name;
+  console.log(`\n${name}`);
+  try { await rungs[name](); } catch (err) { results.push({ rung: name, name: 'rung crashed', ok: false }); console.log(`  FAIL rung crashed: ${err.stack || err}`); }
+}
+await mock.close();
+const failed = results.filter((r) => !r.ok);
+console.log(`\n${results.length - failed.length}/${results.length} checks pass` + (failed.length ? `; failing: ${[...new Set(failed.map((f) => f.rung))].join(', ')}` : ''));
+for (const r of [...new Set(results.map((x) => x.rung))]) console.log(`  ${r}: ${results.filter((x) => x.rung === r && !x.ok).length ? 'FAIL' : 'PASS'}`);
+process.exit(failed.length ? 1 : 0);

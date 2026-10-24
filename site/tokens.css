@@ -1,0 +1,36 @@
+/* Ink-on-paper tokens. This file stands in for the Tinta design system (see DECISIONS.md).
+   To use the real Tinta tokens, drop its CSS into vendor/tinta/*.css: build.mjs loads it after this file,
+   so it only needs to redefine the variables below. */
+:root {
+  color-scheme: light;
+  --paper: #f7f3ea;
+  --paper-2: #efe9da;
+  --ink: #1d1b17;
+  --ink-2: #4a463d;
+  --muted: #655f52;
+  --rule: #d8d0bb;
+  --accent: #27478a;
+  --good: #2c6a38;
+  --focus: #27478a;
+  --font-text: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  /* chart series, validated for colour-blind separation (see DECISIONS.md) */
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s-other: #8a8577;
+  --grid: #e3dccb;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #1b1a17; --paper-2: #25231f; --ink: #ece7da; --ink-2: #c8c2b0; --muted: #a39c89; --rule: #3b3830;
+    --accent: #93b4f2; --good: #7fcf8d; --focus: #93b4f2;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s-other: #8f8a7c;
+    --grid: #2e2c26;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #1b1a17; --paper-2: #25231f; --ink: #ece7da; --ink-2: #c8c2b0; --muted: #a39c89; --rule: #3b3830;
+  --accent: #93b4f2; --good: #7fcf8d; --focus: #93b4f2;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s-other: #8f8a7c;
+  --grid: #2e2c26;
+}

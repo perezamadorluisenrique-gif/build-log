@@ -1,0 +1,49 @@
+name: ci
+
+# Runs on every push and pull request: the full ./score ladder, plus a dry run of the weekly job
+# against the real GitHub API (fetch + build, nothing committed, nothing deployed).
+on:
+  push:
+    branches-ignore: [gh-pages]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright (browser checks in R5)
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Run the ladder
+        run: ./score
+
+  dry-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch live data into a scratch folder (nothing is committed)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/data"
+          cp -r data/. "$RUNNER_TEMP/data/" 2>/dev/null || true
+          node scripts/backfill.mjs --out "$RUNNER_TEMP/data"
+          node scripts/fetch.mjs --out "$RUNNER_TEMP/data"
+      - name: Build and check the site
+        run: |
+          node scripts/build.mjs --data "$RUNNER_TEMP/data" --out dist
+          node scripts/check-site.mjs dist

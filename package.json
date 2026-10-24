@@ -1,0 +1,14 @@
+{
+  "name": "build-log",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Automatic public build log: weekly snapshots of public GitHub activity and Obsidian plugin downloads, built into a static site.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "backfill": "node scripts/backfill.mjs",
+    "build": "node scripts/build.mjs && node scripts/check-site.mjs dist",
+    "score": "./score"
+  }
+}
