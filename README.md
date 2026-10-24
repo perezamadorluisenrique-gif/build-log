@@ -27,7 +27,7 @@ Monday 06:17 UTC  .github/workflows/weekly.yml
 ## Set up (once)
 
 1. Push this repo to GitHub as `<user>/build-log` (public) and make sure Actions are enabled.
-2. Run the **weekly** workflow once by hand: *Actions → weekly → Run workflow*. The first run backfills past weeks, takes a snapshot, commits `data/` and creates the `gh-pages` branch.
+2. Run the **weekly** workflow once by hand (it has a `workflow_dispatch` trigger): *Actions → weekly → Run workflow*. The first run backfills past weeks, takes a snapshot, commits `data/` and creates the `gh-pages` branch.
 3. *Settings → Pages → Build and deployment → Deploy from a branch → `gh-pages` / `/ (root)`*. The site is then at `https://<user>.github.io/build-log/`.
 4. Check *Settings → Actions → General → Workflow permissions* allows the workflow to write (the workflow asks for `contents: write`; an organisation policy can override it).
 

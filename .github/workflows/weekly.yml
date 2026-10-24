@@ -64,7 +64,7 @@ jobs:
             echo "nothing to commit"
           else
             git commit -m "data: snapshot (week: $WEEK) [skip ci]"
-            git push
+            git push || { git pull --rebase && git push; }
           fi
 
       - name: Build site

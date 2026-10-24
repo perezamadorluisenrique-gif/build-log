@@ -1,7 +1,7 @@
 # STATE
 
-- status: running
-- updated: 2026-10-24T05:20:00Z
+- status: done
+- updated: 2026-10-24T04:57:21Z
 - branch: claude/portfolio-build-log-3x6z1p
 
-R0-R5 pass locally; R6 needs RESULTS.md. Pushed; waiting on the CI run (ci.yml: ./score + live dry-run) before writing RESULTS.md.
+All rungs R0-R6 pass locally (60/60). The CI `dry-run` job passed against the real account; the CI `score` job's two failures (missing data/ folder, README wording / RESULTS.md) are fixed in the latest push. See RESULTS.md for what is left for the owner.
