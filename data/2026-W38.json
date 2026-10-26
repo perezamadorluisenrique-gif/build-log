@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "week": "2026-W38",
+  "source": "backfill",
+  "user": "perezamadorluisenrique-gif",
+  "captured_at": "2026-10-24T14:01:00.850Z",
+  "partial": false,
+  "range": {
+    "start": "2026-09-14T00:00:00.000Z",
+    "end": "2026-09-21T00:00:00.000Z"
+  },
+  "errors": [],
+  "activity": {
+    "commits": {
+      "total": 8,
+      "days_active": 2,
+      "by_repo": {
+        "claimable": 5,
+        "shared-blocks": 1,
+        "smart-typography-plugin": 1,
+        "text-format": 1
+      }
+    },
+    "releases": [
+      {
+        "repo": "shared-blocks",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-09-19T21:04:18Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-09-20T14:43:52Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-09-20T14:44:10Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.1.0",
+        "prerelease": false
+      }
+    ],
+    "new_repos": [
+      {
+        "name": "claimable",
+        "url": "https://github.com/perezamadorluisenrique-gif/claimable",
+        "description": "Tells you whether a GitHub issue is actually claimable — not just whether it says \"unassigned\".",
+        "created_at": "2026-09-19T15:24:59Z"
+      },
+      {
+        "name": "shared-blocks",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks",
+        "description": "An Obsidian plugin that allows you to have common and shared sections between multiple notes.",
+        "created_at": "2026-09-19T20:39:33Z"
+      },
+      {
+        "name": "smart-typography-plugin",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin",
+        "description": "Converts quotes to curly quotes, dashes to en and em dashes, and periods to an ellipsis as you type. Substitutions keep out of code, math, wikilinks, frontmatter and URLs, and Backspace right afterwards restores exactly what you typed.",
+        "created_at": "2026-09-20T14:05:50Z"
+      },
+      {
+        "name": "text-format",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format",
+        "description": "Converts the selection between upper, lower, title, sentence and capitalized case, or cycles through them. Also joins wrapped lines, rejoins words split across a line break, strips invisible characters and turns links into plain text.",
+        "created_at": "2026-09-20T14:06:31Z"
+      }
+    ],
+    "issues": null
+  },
+  "state": null
+}
