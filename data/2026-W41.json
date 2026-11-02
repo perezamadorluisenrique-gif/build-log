@@ -1,0 +1,455 @@
+{
+  "schema": 1,
+  "week": "2026-W41",
+  "source": "backfill",
+  "user": "perezamadorluisenrique-gif",
+  "captured_at": "2026-10-24T14:01:00.853Z",
+  "partial": false,
+  "range": {
+    "start": "2026-10-05T00:00:00.000Z",
+    "end": "2026-10-12T00:00:00.000Z"
+  },
+  "errors": [],
+  "activity": {
+    "commits": {
+      "total": 125,
+      "days_active": 6,
+      "by_repo": {
+        "morning-reports": 9,
+        "tab-history": 7,
+        "section-numbering": 6,
+        "url-cards": 6,
+        "dataview-to-bases": 5,
+        "hybrid-line-numbers": 5,
+        "line-editing-commands": 5,
+        "link-title-on-paste": 5,
+        "smart-typography-plugin": 5,
+        "text-format": 5,
+        "community-update-checker": 4,
+        "folder-counts": 4,
+        "list-item-callouts": 4,
+        "note-mover-rules": 4,
+        "note-reading-time": 4,
+        "shared-blocks": 4,
+        "spreadsheet-to-table": 4,
+        "task-rollover": 4,
+        "vim-config": 4,
+        "zoom-into-section": 4,
+        "file-tree-colors": 3,
+        "task-archive": 3,
+        "book-notes": 2,
+        "cert-radar": 2,
+        "child-theme-maker": 2,
+        "open-access-toolbar": 2,
+        "perezamadorluisenrique-gif.github.io": 2,
+        "recall-radar": 2,
+        "review-later": 2,
+        "same-pill-new-look": 2,
+        "web-search-menu": 2,
+        "book-lookup": 1,
+        "explorer-colors-plus": 1,
+        "revisit-later": 1
+      }
+    },
+    "releases": [
+      {
+        "repo": "url-cards",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-05T13:27:28Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/url-cards/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "tab-history",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-06T03:14:27Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/tab-history/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "line-editing-commands",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-10-06T09:35:21Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/line-editing-commands/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.5.0",
+        "name": "0.5.0",
+        "date": "2026-10-07T10:38:26Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.5.0",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.5.0",
+        "name": "0.5.0",
+        "date": "2026-10-07T10:41:08Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.5.0",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.5.0",
+        "name": "0.5.0",
+        "date": "2026-10-07T10:43:34Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.5.0",
+        "prerelease": false
+      },
+      {
+        "repo": "spreadsheet-to-table",
+        "tag": "0.4.0",
+        "name": "0.4.0",
+        "date": "2026-10-07T10:48:39Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table/releases/tag/0.4.0",
+        "prerelease": false
+      },
+      {
+        "repo": "vim-config",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-07T17:50:02Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/vim-config/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "task-archive",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-08T03:23:12Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/task-archive/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "review-later",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-08T13:15:10Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/review-later/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "book-notes",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-08T13:15:20Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/book-notes/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "hybrid-line-numbers",
+        "tag": "0.2.2",
+        "name": "0.2.2",
+        "date": "2026-10-08T13:15:35Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/hybrid-line-numbers/releases/tag/0.2.2",
+        "prerelease": false
+      },
+      {
+        "repo": "link-title-on-paste",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-10-08T13:15:38Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/link-title-on-paste/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "dataview-to-bases",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-10-08T13:15:39Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/dataview-to-bases/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "tab-history",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-08T13:15:47Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/tab-history/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.6.0",
+        "name": "0.6.0",
+        "date": "2026-10-08T13:15:50Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.6.0",
+        "prerelease": false
+      },
+      {
+        "repo": "file-tree-colors",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-08T13:28:15Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/file-tree-colors/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "revisit-later",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-08T15:53:26Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/revisit-later/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "book-lookup",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-08T15:53:27Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/book-lookup/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "explorer-colors-plus",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-08T15:53:28Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/explorer-colors-plus/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "line-editing-commands",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T04:36:39Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/line-editing-commands/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "folder-counts",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T04:39:12Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/folder-counts/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "list-item-callouts",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T04:39:15Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/list-item-callouts/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "tab-history",
+        "tag": "0.3.0",
+        "name": "0.3.0",
+        "date": "2026-10-09T04:41:16Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/tab-history/releases/tag/0.3.0",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.6.0",
+        "name": "0.6.0",
+        "date": "2026-10-09T04:41:17Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.6.0",
+        "prerelease": false
+      },
+      {
+        "repo": "community-update-checker",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T04:43:21Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/community-update-checker/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "note-mover-rules",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T04:43:35Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/note-mover-rules/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "task-rollover",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T04:44:38Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/task-rollover/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "link-title-on-paste",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T04:46:18Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/link-title-on-paste/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "shared-blocks",
+        "tag": "0.5.0",
+        "name": "0.5.0",
+        "date": "2026-10-09T04:48:12Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks/releases/tag/0.5.0",
+        "prerelease": false
+      },
+      {
+        "repo": "dataview-to-bases",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T04:48:34Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/dataview-to-bases/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "note-reading-time",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T04:48:36Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/note-reading-time/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "url-cards",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T04:50:44Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/url-cards/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.7.0",
+        "name": "0.7.0",
+        "date": "2026-10-09T04:53:44Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.7.0",
+        "prerelease": false
+      },
+      {
+        "repo": "hybrid-line-numbers",
+        "tag": "0.3.0",
+        "name": "0.3.0",
+        "date": "2026-10-09T04:53:50Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/hybrid-line-numbers/releases/tag/0.3.0",
+        "prerelease": false
+      },
+      {
+        "repo": "zoom-into-section",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-10-09T05:03:21Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/zoom-into-section/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.6.0",
+        "name": "0.6.0",
+        "date": "2026-10-09T05:09:07Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.6.0",
+        "prerelease": false
+      },
+      {
+        "repo": "web-search-menu",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-10T03:38:01Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/web-search-menu/releases/tag/0.1.0",
+        "prerelease": false
+      }
+    ],
+    "new_repos": [
+      {
+        "name": "url-cards",
+        "url": "https://github.com/perezamadorluisenrique-gif/url-cards",
+        "description": "Turn web addresses into cards with title, description and image in Obsidian. Reads Auto Card Link's cardlink blocks.",
+        "created_at": "2026-10-05T13:16:04Z"
+      },
+      {
+        "name": "perezamadorluisenrique-gif.github.io",
+        "url": "https://github.com/perezamadorluisenrique-gif/perezamadorluisenrique-gif.github.io",
+        "description": "",
+        "created_at": "2026-10-05T19:24:30Z"
+      },
+      {
+        "name": "tab-history",
+        "url": "https://github.com/perezamadorluisenrique-gif/tab-history",
+        "description": "Keeps each tab's back and forward history across restarts, and adds commands to move, maximize and close tabs.",
+        "created_at": "2026-10-06T02:53:56Z"
+      },
+      {
+        "name": "morning-reports",
+        "url": "https://github.com/perezamadorluisenrique-gif/morning-reports",
+        "description": "Daily autopilot reports for the Obsidian plugins, opened as issues.",
+        "created_at": "2026-10-06T09:37:32Z"
+      },
+      {
+        "name": "vim-config",
+        "url": "https://github.com/perezamadorluisenrique-gif/vim-config",
+        "description": "Loads a vimrc-style file from your vault so your key mappings and editor commands are ready when vim mode starts.",
+        "created_at": "2026-10-07T17:45:21Z"
+      },
+      {
+        "name": "task-archive",
+        "url": "https://github.com/perezamadorluisenrique-gif/task-archive",
+        "description": "Moves completed tasks, with their sub-items, into an archive section or note.",
+        "created_at": "2026-10-08T02:50:30Z"
+      },
+      {
+        "name": "review-later",
+        "url": "https://github.com/perezamadorluisenrique-gif/review-later",
+        "description": "Link the current note into a future daily note, with a date typed in plain English, so it comes back when you want to review it.",
+        "created_at": "2026-10-08T12:57:57Z"
+      },
+      {
+        "name": "file-tree-colors",
+        "url": "https://github.com/perezamadorluisenrique-gif/file-tree-colors",
+        "description": "Color files and folders in the Obsidian file explorer, with a palette, cascading to children, and import from File Color.",
+        "created_at": "2026-10-08T13:00:39Z"
+      },
+      {
+        "name": "book-notes",
+        "url": "https://github.com/perezamadorluisenrique-gif/book-notes",
+        "description": "Create book notes from Open Library or Google Books, with cover images, ISBN search and Book Search compatible templates.",
+        "created_at": "2026-10-08T13:02:31Z"
+      },
+      {
+        "name": "explorer-colors-plus",
+        "url": "https://github.com/perezamadorluisenrique-gif/explorer-colors-plus",
+        "description": "Color files and folders in the file explorer, with a palette, cascading to children, and import from File Color.",
+        "created_at": "2026-10-08T15:50:05Z"
+      },
+      {
+        "name": "revisit-later",
+        "url": "https://github.com/perezamadorluisenrique-gif/revisit-later",
+        "description": "Link the current note into a future daily note, with a date typed in plain English, so it comes back when you want it.",
+        "created_at": "2026-10-08T15:50:09Z"
+      },
+      {
+        "name": "book-lookup",
+        "url": "https://github.com/perezamadorluisenrique-gif/book-lookup",
+        "description": "Create book notes from Open Library or Google Books, with cover images, ISBN search and Book Search compatible templates.",
+        "created_at": "2026-10-08T15:50:13Z"
+      },
+      {
+        "name": "child-theme-maker",
+        "url": "https://github.com/perezamadorluisenrique-gif/child-theme-maker",
+        "description": "Child Theme Maker: create a safe child theme for any classic or block theme in three steps. Free WordPress plugin, no external services.",
+        "created_at": "2026-10-09T00:01:19Z"
+      },
+      {
+        "name": "open-access-toolbar",
+        "url": "https://github.com/perezamadorluisenrique-gif/open-access-toolbar",
+        "description": "Free WordPress plugin: a lightweight, private accessibility toolbar for visitors plus a content checker for site owners. No accounts, no cloud, no tracking.",
+        "created_at": "2026-10-09T00:55:35Z"
+      },
+      {
+        "name": "web-search-menu",
+        "url": "https://github.com/perezamadorluisenrique-gif/web-search-menu",
+        "description": "Search the web for selected text or the note title from the right-click menu, with engines you define.",
+        "created_at": "2026-10-10T03:00:38Z"
+      }
+    ],
+    "issues": null
+  },
+  "state": null
+}
