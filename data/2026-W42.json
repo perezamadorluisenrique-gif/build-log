@@ -1,0 +1,1391 @@
+{
+  "schema": 1,
+  "week": "2026-W42",
+  "source": "weekly",
+  "user": "perezamadorluisenrique-gif",
+  "captured_at": "2026-10-24T14:01:00.904Z",
+  "partial": false,
+  "range": {
+    "start": "2026-10-12T00:00:00.000Z",
+    "end": "2026-10-19T00:00:00.000Z"
+  },
+  "errors": [],
+  "activity": {
+    "commits": {
+      "total": 93,
+      "days_active": 7,
+      "by_repo": {
+        "claude-studio": 6,
+        "list-item-callouts": 5,
+        "section-numbering": 5,
+        "smart-typography-plugin": 5,
+        "spreadsheet-to-table": 5,
+        "dice-rolls": 4,
+        "morning-reports": 4,
+        "quick-translate": 4,
+        "text-format": 4,
+        "community-update-checker": 3,
+        "explorer-colors-plus": 3,
+        "folder-counts": 3,
+        "line-editing-commands": 3,
+        "shared-blocks": 3,
+        "tab-history": 3,
+        "task-rollover": 3,
+        "vim-config": 3,
+        "word-lookup": 3,
+        "book-lookup": 2,
+        "child-theme-maker": 2,
+        "dataview-to-bases": 2,
+        "hybrid-line-numbers": 2,
+        "link-title-on-paste": 2,
+        "note-mover-rules": 2,
+        "note-reading-time": 2,
+        "open-access-toolbar": 2,
+        "revisit-later": 2,
+        "url-cards": 2,
+        "zoom-into-section": 2,
+        "task-archive": 1,
+        "web-search-menu": 1
+      }
+    },
+    "releases": [
+      {
+        "repo": "word-lookup",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-13T02:36:23Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/word-lookup/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "quick-translate",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-14T03:25:27Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/quick-translate/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.7.0",
+        "name": "0.7.0",
+        "date": "2026-10-14T10:22:21Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.7.0",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.8.0",
+        "name": "0.8.0",
+        "date": "2026-10-14T10:30:48Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.8.0",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.7.0",
+        "name": "0.7.0",
+        "date": "2026-10-14T10:37:58Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.7.0",
+        "prerelease": false
+      },
+      {
+        "repo": "spreadsheet-to-table",
+        "tag": "0.5.0",
+        "name": "0.5.0",
+        "date": "2026-10-14T10:43:08Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table/releases/tag/0.5.0",
+        "prerelease": false
+      },
+      {
+        "repo": "list-item-callouts",
+        "tag": "0.3.0",
+        "name": "0.3.0",
+        "date": "2026-10-14T10:46:45Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/list-item-callouts/releases/tag/0.3.0",
+        "prerelease": false
+      },
+      {
+        "repo": "folder-counts",
+        "tag": "0.3.0",
+        "name": "0.3.0",
+        "date": "2026-10-14T10:52:18Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/folder-counts/releases/tag/0.3.0",
+        "prerelease": false
+      },
+      {
+        "repo": "dice-rolls",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-14T10:52:48Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/dice-rolls/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "community-update-checker",
+        "tag": "0.3.0",
+        "name": "0.3.0",
+        "date": "2026-10-14T10:55:29Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/community-update-checker/releases/tag/0.3.0",
+        "prerelease": false
+      },
+      {
+        "repo": "shared-blocks",
+        "tag": "0.6.0",
+        "name": "0.6.0",
+        "date": "2026-10-14T10:56:36Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks/releases/tag/0.6.0",
+        "prerelease": false
+      },
+      {
+        "repo": "line-editing-commands",
+        "tag": "0.2.1",
+        "name": "0.2.1",
+        "date": "2026-10-14T11:09:59Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/line-editing-commands/releases/tag/0.2.1",
+        "prerelease": false
+      },
+      {
+        "repo": "task-rollover",
+        "tag": "0.2.1",
+        "name": "0.2.1",
+        "date": "2026-10-14T11:10:07Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/task-rollover/releases/tag/0.2.1",
+        "prerelease": false
+      },
+      {
+        "repo": "quick-translate",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-10-14T11:10:08Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/quick-translate/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.7.1",
+        "name": "0.7.1",
+        "date": "2026-10-14T11:38:28Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.7.1",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.8.1",
+        "name": "0.8.1",
+        "date": "2026-10-14T11:47:01Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.8.1",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.7.1",
+        "name": "0.7.1",
+        "date": "2026-10-14T11:54:21Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.7.1",
+        "prerelease": false
+      },
+      {
+        "repo": "spreadsheet-to-table",
+        "tag": "0.5.1",
+        "name": "0.5.1",
+        "date": "2026-10-14T11:59:26Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table/releases/tag/0.5.1",
+        "prerelease": false
+      },
+      {
+        "repo": "list-item-callouts",
+        "tag": "0.3.1",
+        "name": "0.3.1",
+        "date": "2026-10-14T12:03:11Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/list-item-callouts/releases/tag/0.3.1",
+        "prerelease": false
+      },
+      {
+        "repo": "tab-history",
+        "tag": "0.3.1",
+        "name": "0.3.1",
+        "date": "2026-10-14T12:10:29Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/tab-history/releases/tag/0.3.1",
+        "prerelease": false
+      },
+      {
+        "repo": "explorer-colors-plus",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-10-14T12:10:34Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/explorer-colors-plus/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "vim-config",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-10-14T12:10:40Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/vim-config/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.8.2",
+        "name": "0.8.2",
+        "date": "2026-10-14T12:12:06Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.8.2",
+        "prerelease": false
+      },
+      {
+        "repo": "dice-rolls",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-10-14T12:48:24Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/dice-rolls/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.7.2",
+        "name": "0.7.2",
+        "date": "2026-10-14T12:54:50Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.7.2",
+        "prerelease": false
+      },
+      {
+        "repo": "spreadsheet-to-table",
+        "tag": "0.5.2",
+        "name": "0.5.2",
+        "date": "2026-10-14T13:15:55Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table/releases/tag/0.5.2",
+        "prerelease": false
+      },
+      {
+        "repo": "list-item-callouts",
+        "tag": "0.3.2",
+        "name": "0.3.2",
+        "date": "2026-10-14T13:19:42Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/list-item-callouts/releases/tag/0.3.2",
+        "prerelease": false
+      },
+      {
+        "repo": "claude-studio",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-10-15T10:23:08Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/claude-studio/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "claude-studio",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-10-15T21:05:32Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/claude-studio/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "claude-studio",
+        "tag": "0.1.2",
+        "name": "0.1.2",
+        "date": "2026-10-15T21:16:23Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/claude-studio/releases/tag/0.1.2",
+        "prerelease": false
+      },
+      {
+        "repo": "claude-studio",
+        "tag": "0.1.3",
+        "name": "0.1.3",
+        "date": "2026-10-15T21:44:25Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/claude-studio/releases/tag/0.1.3",
+        "prerelease": false
+      },
+      {
+        "repo": "claude-studio",
+        "tag": "0.1.4",
+        "name": "0.1.4",
+        "date": "2026-10-18T03:19:31Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/claude-studio/releases/tag/0.1.4",
+        "prerelease": false
+      }
+    ],
+    "new_repos": [
+      {
+        "name": "word-lookup",
+        "url": "https://github.com/perezamadorluisenrique-gif/word-lookup",
+        "description": "Look up any word in a sidebar dictionary with definitions, phonetics, synonyms and antonyms, or create a note for it.",
+        "created_at": "2026-10-12T02:57:48Z"
+      },
+      {
+        "name": "quick-translate",
+        "url": "https://github.com/perezamadorluisenrique-gif/quick-translate",
+        "description": "Translate the selection or a whole note into another language with no account, keeping links, code and front matter untouched.",
+        "created_at": "2026-10-14T03:01:58Z"
+      },
+      {
+        "name": "dice-rolls",
+        "url": "https://github.com/perezamadorluisenrique-gif/dice-rolls",
+        "description": "Inline dice rolls for Obsidian you click to reroll, with full dice notation, a roll dialog and a roll history. Reads Dice Roller notes.",
+        "created_at": "2026-10-14T10:21:14Z"
+      },
+      {
+        "name": "claude-studio",
+        "url": "https://github.com/perezamadorluisenrique-gif/claude-studio",
+        "description": "Notion-style AI writing, chat and vault tools for Obsidian, powered by your local Claude Code CLI.",
+        "created_at": "2026-10-15T10:18:00Z"
+      }
+    ],
+    "issues": {
+      "opened": 9,
+      "closed": 8
+    }
+  },
+  "state": {
+    "repos": {
+      "count": 48,
+      "stars": 9,
+      "open_issues": 10
+    },
+    "projects": [
+      {
+        "name": "book-lookup",
+        "url": "https://github.com/perezamadorluisenrique-gif/book-lookup",
+        "description": "Create book notes from Open Library or Google Books, with cover images, ISBN search and Book Search compatible templates.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-08T15:50:13Z",
+        "pushed_at": "2026-10-19T17:21:34Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.0",
+          "date": "2026-10-08T15:53:27Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/book-lookup/releases/tag/0.1.0"
+        },
+        "plugin": "book-lookup"
+      },
+      {
+        "name": "book-notes",
+        "url": "https://github.com/perezamadorluisenrique-gif/book-notes",
+        "description": "Create book notes from Open Library or Google Books, with cover images, ISBN search and Book Search compatible templates.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-08T13:02:31Z",
+        "pushed_at": "2026-10-08T13:15:20Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.0",
+          "date": "2026-10-08T13:15:20Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/book-notes/releases/tag/0.1.0"
+        },
+        "plugin": null
+      },
+      {
+        "name": "book-studio",
+        "url": "https://github.com/perezamadorluisenrique-gif/book-studio",
+        "description": "Turn notes into a print-ready paperback PDF and an EPUB 3, entirely on your device. Obsidian and web app.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 1,
+        "created_at": "2026-10-19T17:30:05Z",
+        "pushed_at": "2026-10-24T02:59:33Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.2",
+          "date": "2026-10-19T21:26:11Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/book-studio/releases/tag/0.1.2"
+        },
+        "plugin": "book-studio"
+      },
+      {
+        "name": "build-log",
+        "url": "https://github.com/perezamadorluisenrique-gif/build-log",
+        "description": "",
+        "homepage": "",
+        "language": "JavaScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-24T04:33:48Z",
+        "pushed_at": "2026-10-24T04:57:23Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "cert-radar",
+        "url": "https://github.com/perezamadorluisenrique-gif/cert-radar",
+        "description": "See every public TLS certificate for a domain and when each breaks under the 200/100/47-day validity caps. Free, from Certificate Transparency logs.",
+        "homepage": "",
+        "language": "JavaScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-03T15:40:48Z",
+        "pushed_at": "2026-10-05T17:08:18Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "child-theme-maker",
+        "url": "https://github.com/perezamadorluisenrique-gif/child-theme-maker",
+        "description": "Child Theme Maker: create a safe child theme for any classic or block theme in three steps. Free WordPress plugin, no external services.",
+        "homepage": "",
+        "language": "PHP",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-09T00:01:19Z",
+        "pushed_at": "2026-10-17T23:39:46Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "claimable",
+        "url": "https://github.com/perezamadorluisenrique-gif/claimable",
+        "description": "Tells you whether a GitHub issue is actually claimable — not just whether it says \"unassigned\".",
+        "homepage": "https://github.com/perezamadorluisenrique-gif/claimable#readme",
+        "language": "TypeScript",
+        "topics": [
+          "cli",
+          "contributing",
+          "developer-tools",
+          "github-api",
+          "good-first-issue",
+          "open-source"
+        ],
+        "stars": 0,
+        "open_issues": 3,
+        "created_at": "2026-09-19T15:24:59Z",
+        "pushed_at": "2026-10-19T15:27:18Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "claude-studio",
+        "url": "https://github.com/perezamadorluisenrique-gif/claude-studio",
+        "description": "Notion-style AI writing, chat and vault tools for Obsidian, powered by your local Claude Code CLI.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 1,
+        "created_at": "2026-10-15T10:18:00Z",
+        "pushed_at": "2026-10-24T02:59:31Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.4",
+          "date": "2026-10-18T03:19:31Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/claude-studio/releases/tag/0.1.4"
+        },
+        "plugin": "claude-studio"
+      },
+      {
+        "name": "community-update-checker",
+        "url": "https://github.com/perezamadorluisenrique-gif/community-update-checker",
+        "description": "Checks your installed community add-ons for updates in the background, shows release notes and flags abandoned ones.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-03T10:20:06Z",
+        "pushed_at": "2026-10-19T17:20:23Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.3.0",
+          "date": "2026-10-14T10:55:29Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/community-update-checker/releases/tag/0.3.0"
+        },
+        "plugin": "update-radar"
+      },
+      {
+        "name": "dataview-to-bases",
+        "url": "https://github.com/perezamadorluisenrique-gif/dataview-to-bases",
+        "description": "Convert Dataview queries into Bases blocks, and report which queries in your vault can be converted.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-03T13:27:23Z",
+        "pushed_at": "2026-10-19T17:20:26Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.2.0",
+          "date": "2026-10-09T04:48:34Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/dataview-to-bases/releases/tag/0.2.0"
+        },
+        "plugin": "dataview-to-bases"
+      },
+      {
+        "name": "dice-rolls",
+        "url": "https://github.com/perezamadorluisenrique-gif/dice-rolls",
+        "description": "Inline dice rolls for Obsidian you click to reroll, with full dice notation, a roll dialog and a roll history. Reads Dice Roller notes.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 1,
+        "created_at": "2026-10-14T10:21:14Z",
+        "pushed_at": "2026-10-19T17:21:46Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.1",
+          "date": "2026-10-14T12:48:24Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/dice-rolls/releases/tag/0.1.1"
+        },
+        "plugin": "dice-rolls"
+      },
+      {
+        "name": "explorer-colors-plus",
+        "url": "https://github.com/perezamadorluisenrique-gif/explorer-colors-plus",
+        "description": "Color files and folders in the file explorer, with a palette, cascading to children, and import from File Color.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-08T15:50:05Z",
+        "pushed_at": "2026-10-19T17:21:31Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.1",
+          "date": "2026-10-14T12:10:34Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/explorer-colors-plus/releases/tag/0.1.1"
+        },
+        "plugin": "explorer-colors-plus"
+      },
+      {
+        "name": "file-tree-colors",
+        "url": "https://github.com/perezamadorluisenrique-gif/file-tree-colors",
+        "description": "Color files and folders in the Obsidian file explorer, with a palette, cascading to children, and import from File Color.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-08T13:00:39Z",
+        "pushed_at": "2026-10-08T13:28:14Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.0",
+          "date": "2026-10-08T13:28:15Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/file-tree-colors/releases/tag/0.1.0"
+        },
+        "plugin": null
+      },
+      {
+        "name": "folder-counts",
+        "url": "https://github.com/perezamadorluisenrique-gif/folder-counts",
+        "description": "Obsidian plugin: see how many notes each folder holds, right in the file explorer.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 1,
+        "open_issues": 0,
+        "created_at": "2026-09-27T20:40:01Z",
+        "pushed_at": "2026-10-19T17:19:37Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.3.0",
+          "date": "2026-10-14T10:52:18Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/folder-counts/releases/tag/0.3.0"
+        },
+        "plugin": "folder-counts"
+      },
+      {
+        "name": "hybrid-line-numbers",
+        "url": "https://github.com/perezamadorluisenrique-gif/hybrid-line-numbers",
+        "description": "Relative and hybrid line numbers for Obsidian. A folded section counts as one line, and numbers can turn absolute in Vim insert mode.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-09-26T09:46:27Z",
+        "pushed_at": "2026-10-19T17:19:32Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.3.0",
+          "date": "2026-10-09T04:53:50Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/hybrid-line-numbers/releases/tag/0.3.0"
+        },
+        "plugin": "hybrid-line-numbers"
+      },
+      {
+        "name": "libro-python-es",
+        "url": "https://github.com/perezamadorluisenrique-gif/libro-python-es",
+        "description": "",
+        "homepage": "",
+        "language": "Python",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-21T10:35:01Z",
+        "pushed_at": "2026-10-21T11:38:43Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "v1.0",
+          "date": "2026-10-21T11:38:43Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/libro-python-es/releases/tag/v1.0"
+        },
+        "plugin": null
+      },
+      {
+        "name": "line-editing-commands",
+        "url": "https://github.com/perezamadorluisenrique-gif/line-editing-commands",
+        "description": "Obsidian: duplicate, join, sort, reverse lines, insert blank lines, go to line, multi-cursor aware.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-04T04:55:18Z",
+        "pushed_at": "2026-10-19T17:20:29Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.2.1",
+          "date": "2026-10-14T11:09:59Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/line-editing-commands/releases/tag/0.2.1"
+        },
+        "plugin": "line-editing-commands"
+      },
+      {
+        "name": "link-title-on-paste",
+        "url": "https://github.com/perezamadorluisenrique-gif/link-title-on-paste",
+        "description": "Obsidian plugin: paste a web address and get a Markdown link with the page title.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-02T02:55:40Z",
+        "pushed_at": "2026-10-19T17:20:20Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.2.0",
+          "date": "2026-10-09T04:46:18Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/link-title-on-paste/releases/tag/0.2.0"
+        },
+        "plugin": "link-title-on-paste"
+      },
+      {
+        "name": "linux-en-una-pestana",
+        "url": "https://github.com/perezamadorluisenrique-gif/linux-en-una-pestana",
+        "description": "",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-21T10:35:06Z",
+        "pushed_at": "2026-10-21T10:40:24Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "list-item-callouts",
+        "url": "https://github.com/perezamadorluisenrique-gif/list-item-callouts",
+        "description": "Obsidian plugin: highlight single list items as coloured callouts by starting them with a character such as & ! ? or @. Compatible with List Callouts notes.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-09-27T14:52:05Z",
+        "pushed_at": "2026-10-19T17:19:34Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.3.2",
+          "date": "2026-10-14T13:19:42Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/list-item-callouts/releases/tag/0.3.2"
+        },
+        "plugin": "list-item-callouts"
+      },
+      {
+        "name": "morning-reports",
+        "url": "https://github.com/perezamadorluisenrique-gif/morning-reports",
+        "description": "Daily autopilot reports for the Obsidian plugins, opened as issues.",
+        "homepage": "",
+        "language": "JavaScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 2,
+        "created_at": "2026-10-06T09:37:32Z",
+        "pushed_at": "2026-10-23T15:46:32Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "note-mover-rules",
+        "url": "https://github.com/perezamadorluisenrique-gif/note-mover-rules",
+        "description": "Move notes into folders by ordered rules on tags, properties, titles and paths, with a preview before any bulk move.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-04T13:27:29Z",
+        "pushed_at": "2026-10-19T17:20:33Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.2.0",
+          "date": "2026-10-09T04:43:35Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/note-mover-rules/releases/tag/0.2.0"
+        },
+        "plugin": "note-mover-rules"
+      },
+      {
+        "name": "note-reading-time",
+        "url": "https://github.com/perezamadorluisenrique-gif/note-reading-time",
+        "description": "Obsidian plugin: reading time of the current note or selection in the status bar.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-09-29T09:13:11Z",
+        "pushed_at": "2026-10-19T17:19:40Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.2.0",
+          "date": "2026-10-09T04:48:36Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/note-reading-time/releases/tag/0.2.0"
+        },
+        "plugin": "note-reading-time"
+      },
+      {
+        "name": "obsidian-radar",
+        "url": "https://github.com/perezamadorluisenrique-gif/obsidian-radar",
+        "description": "",
+        "homepage": "",
+        "language": "JavaScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-24T04:29:35Z",
+        "pushed_at": "2026-10-24T13:56:44Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "oeis-terminos",
+        "url": "https://github.com/perezamadorluisenrique-gif/oeis-terminos",
+        "description": "",
+        "homepage": "",
+        "language": "Python",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-21T10:35:11Z",
+        "pushed_at": "2026-10-21T10:40:26Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "open-access-toolbar",
+        "url": "https://github.com/perezamadorluisenrique-gif/open-access-toolbar",
+        "description": "Free WordPress plugin: a lightweight, private accessibility toolbar for visitors plus a content checker for site owners. No accounts, no cloud, no tracking.",
+        "homepage": "",
+        "language": "PHP",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-09T00:55:35Z",
+        "pushed_at": "2026-10-17T23:30:49Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "perezamadorluisenrique-gif.github.io",
+        "url": "https://github.com/perezamadorluisenrique-gif/perezamadorluisenrique-gif.github.io",
+        "description": "",
+        "homepage": "",
+        "language": "HTML",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-05T19:24:30Z",
+        "pushed_at": "2026-10-21T10:41:36Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "ptestapp1",
+        "url": "https://github.com/perezamadorluisenrique-gif/ptestapp1",
+        "description": "",
+        "homepage": "",
+        "language": "JavaScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-04-05T23:40:49Z",
+        "pushed_at": "2026-04-12T09:53:26Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "quick-translate",
+        "url": "https://github.com/perezamadorluisenrique-gif/quick-translate",
+        "description": "Translate the selection or a whole note into another language with no account, keeping links, code and front matter untouched.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-14T03:01:58Z",
+        "pushed_at": "2026-10-19T17:21:43Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.1",
+          "date": "2026-10-14T11:10:08Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/quick-translate/releases/tag/0.1.1"
+        },
+        "plugin": "quick-translate"
+      },
+      {
+        "name": "recall-radar",
+        "url": "https://github.com/perezamadorluisenrique-gif/recall-radar",
+        "description": "Free app that checks the products, food and car you own against U.S. recalls (CPSC, FDA, NHTSA). No login, works offline.",
+        "homepage": "",
+        "language": "JavaScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-03T15:40:51Z",
+        "pushed_at": "2026-10-05T17:08:15Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "review-later",
+        "url": "https://github.com/perezamadorluisenrique-gif/review-later",
+        "description": "Link the current note into a future daily note, with a date typed in plain English, so it comes back when you want to review it.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-08T12:57:57Z",
+        "pushed_at": "2026-10-08T13:15:10Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.0",
+          "date": "2026-10-08T13:15:10Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/review-later/releases/tag/0.1.0"
+        },
+        "plugin": null
+      },
+      {
+        "name": "revisit-later",
+        "url": "https://github.com/perezamadorluisenrique-gif/revisit-later",
+        "description": "Link the current note into a future daily note, with a date typed in plain English, so it comes back when you want it.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-08T15:50:09Z",
+        "pushed_at": "2026-10-19T17:21:29Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.0",
+          "date": "2026-10-08T15:53:26Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/revisit-later/releases/tag/0.1.0"
+        },
+        "plugin": "revisit-later"
+      },
+      {
+        "name": "same-pill-new-look",
+        "url": "https://github.com/perezamadorluisenrique-gif/same-pill-new-look",
+        "description": "Free app that warns when a refill comes from a different generic maker and will look different. English and Spanish, no login, data stays on your phone.",
+        "homepage": "",
+        "language": "JavaScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-03T15:40:44Z",
+        "pushed_at": "2026-10-05T17:09:15Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "section-numbering",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering",
+        "description": "",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-09-23T09:19:00Z",
+        "pushed_at": "2026-10-19T17:19:26Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.8.2",
+          "date": "2026-10-14T12:12:06Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.8.2"
+        },
+        "plugin": "section-numbering"
+      },
+      {
+        "name": "shared-blocks",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks",
+        "description": "An Obsidian plugin that allows you to have common and shared sections between multiple notes.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 2,
+        "open_issues": 0,
+        "created_at": "2026-09-19T20:39:33Z",
+        "pushed_at": "2026-10-19T17:18:43Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.6.0",
+          "date": "2026-10-14T10:56:36Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks/releases/tag/0.6.0"
+        },
+        "plugin": "shared-blocks"
+      },
+      {
+        "name": "silbo-sound",
+        "url": "https://github.com/perezamadorluisenrique-gif/silbo-sound",
+        "description": "",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 2,
+        "created_at": "2026-10-21T10:37:15Z",
+        "pushed_at": "2026-10-24T14:00:00Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "smart-typography-plugin",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin",
+        "description": "Converts quotes to curly quotes, dashes to en and em dashes, and periods to an ellipsis as you type. Substitutions keep out of code, math, wikilinks, frontmatter and URLs, and Backspace right afterwards restores exactly what you typed.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 1,
+        "open_issues": 0,
+        "created_at": "2026-09-20T14:05:50Z",
+        "pushed_at": "2026-10-19T17:19:23Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.7.2",
+          "date": "2026-10-14T12:54:50Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.7.2"
+        },
+        "plugin": "typography-as-you-type"
+      },
+      {
+        "name": "spreadsheet-to-table",
+        "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table",
+        "description": "",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-09-23T18:14:15Z",
+        "pushed_at": "2026-10-19T17:19:29Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.5.2",
+          "date": "2026-10-14T13:15:55Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table/releases/tag/0.5.2"
+        },
+        "plugin": "spreadsheet-to-table"
+      },
+      {
+        "name": "tab-history",
+        "url": "https://github.com/perezamadorluisenrique-gif/tab-history",
+        "description": "Keeps each tab's back and forward history across restarts, and adds commands to move, maximize and close tabs.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-06T02:53:56Z",
+        "pushed_at": "2026-10-19T17:20:35Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.3.1",
+          "date": "2026-10-14T12:10:29Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/tab-history/releases/tag/0.3.1"
+        },
+        "plugin": "tab-history"
+      },
+      {
+        "name": "task-archive",
+        "url": "https://github.com/perezamadorluisenrique-gif/task-archive",
+        "description": "Moves completed tasks, with their sub-items, into an archive section or note.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-08T02:50:30Z",
+        "pushed_at": "2026-10-19T17:21:25Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.0",
+          "date": "2026-10-08T03:23:12Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/task-archive/releases/tag/0.1.0"
+        },
+        "plugin": "task-archive"
+      },
+      {
+        "name": "task-rollover",
+        "url": "https://github.com/perezamadorluisenrique-gif/task-rollover",
+        "description": "Obsidian plugin: roll unfinished tasks from your last daily note into today's.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-09-29T09:24:37Z",
+        "pushed_at": "2026-10-19T17:20:15Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.2.1",
+          "date": "2026-10-14T11:10:07Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/task-rollover/releases/tag/0.2.1"
+        },
+        "plugin": "task-rollover"
+      },
+      {
+        "name": "text-format",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format",
+        "description": "Converts the selection between upper, lower, title, sentence and capitalized case, or cycles through them. Also joins wrapped lines, rejoins words split across a line break, strips invisible characters and turns links into plain text.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 1,
+        "open_issues": 0,
+        "created_at": "2026-09-20T14:06:31Z",
+        "pushed_at": "2026-10-19T17:19:20Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.7.1",
+          "date": "2026-10-14T11:54:21Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.7.1"
+        },
+        "plugin": "text-format"
+      },
+      {
+        "name": "url-cards",
+        "url": "https://github.com/perezamadorluisenrique-gif/url-cards",
+        "description": "Turn web addresses into cards with title, description and image in Obsidian. Reads Auto Card Link's cardlink blocks.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 1,
+        "open_issues": 0,
+        "created_at": "2026-10-05T13:16:04Z",
+        "pushed_at": "2026-10-19T17:21:20Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.2.0",
+          "date": "2026-10-09T04:50:44Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/url-cards/releases/tag/0.2.0"
+        },
+        "plugin": "url-cards"
+      },
+      {
+        "name": "vault-health-cleanup",
+        "url": "https://github.com/perezamadorluisenrique-gif/vault-health-cleanup",
+        "description": "Plugin para Obsidian que detecta notas huérfanas ",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-03-23T01:31:28Z",
+        "pushed_at": "2026-03-23T01:51:59Z",
+        "archived": false,
+        "latest_release": null,
+        "plugin": null
+      },
+      {
+        "name": "vim-config",
+        "url": "https://github.com/perezamadorluisenrique-gif/vim-config",
+        "description": "Loads a vimrc-style file from your vault so your key mappings and editor commands are ready when vim mode starts.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 1,
+        "open_issues": 0,
+        "created_at": "2026-10-07T17:45:21Z",
+        "pushed_at": "2026-10-19T17:21:23Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.1",
+          "date": "2026-10-14T12:10:40Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/vim-config/releases/tag/0.1.1"
+        },
+        "plugin": "vim-config"
+      },
+      {
+        "name": "web-search-menu",
+        "url": "https://github.com/perezamadorluisenrique-gif/web-search-menu",
+        "description": "Search the web for selected text or the note title from the right-click menu, with engines you define.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 1,
+        "open_issues": 0,
+        "created_at": "2026-10-10T03:00:38Z",
+        "pushed_at": "2026-10-19T17:21:37Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.0",
+          "date": "2026-10-10T03:38:01Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/web-search-menu/releases/tag/0.1.0"
+        },
+        "plugin": "web-search-menu"
+      },
+      {
+        "name": "word-lookup",
+        "url": "https://github.com/perezamadorluisenrique-gif/word-lookup",
+        "description": "Look up any word in a sidebar dictionary with definitions, phonetics, synonyms and antonyms, or create a note for it.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 0,
+        "open_issues": 0,
+        "created_at": "2026-10-12T02:57:48Z",
+        "pushed_at": "2026-10-19T17:21:40Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.1.0",
+          "date": "2026-10-13T02:36:23Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/word-lookup/releases/tag/0.1.0"
+        },
+        "plugin": "word-lookup"
+      },
+      {
+        "name": "zoom-into-section",
+        "url": "https://github.com/perezamadorluisenrique-gif/zoom-into-section",
+        "description": "Obsidian plugin: zoom into a heading or list item, with a breadcrumb bar.",
+        "homepage": "",
+        "language": "TypeScript",
+        "topics": [],
+        "stars": 1,
+        "open_issues": 0,
+        "created_at": "2026-09-29T09:31:39Z",
+        "pushed_at": "2026-10-19T17:20:17Z",
+        "archived": false,
+        "latest_release": {
+          "tag": "0.2.0",
+          "date": "2026-10-09T05:03:21Z",
+          "url": "https://github.com/perezamadorluisenrique-gif/zoom-into-section/releases/tag/0.2.0"
+        },
+        "plugin": "zoom-into-section"
+      }
+    ],
+    "plugins": {
+      "book-lookup": {
+        "name": "Book Lookup",
+        "repo": "perezamadorluisenrique-gif/book-lookup",
+        "description": "Create book notes from Open Library or Google Books, with cover images, ISBN search and Book Search compatible templates. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 48
+      },
+      "book-studio": {
+        "name": "Book Studio",
+        "repo": "perezamadorluisenrique-gif/book-studio",
+        "description": "Turn notes into a print-ready paperback PDF and an EPUB 3, entirely on your device. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 84
+      },
+      "claude-studio": {
+        "name": "Claude Studio",
+        "repo": "perezamadorluisenrique-gif/claude-studio",
+        "description": "Notion-style AI writing, chat and vault tools powered by your local Claude Code CLI. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 58
+      },
+      "dataview-to-bases": {
+        "name": "Dataview to Bases",
+        "repo": "perezamadorluisenrique-gif/dataview-to-bases",
+        "description": "Convert Dataview queries into Bases blocks, and report which queries in your vault can be converted. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 170
+      },
+      "dice-rolls": {
+        "name": "Dice Rolls",
+        "repo": "perezamadorluisenrique-gif/dice-rolls",
+        "description": "Inline dice rolls you click to reroll, in Live Preview and Reading view, with full dice notation, a roll dialog and a roll history. Reads Dice Roller notes. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 106
+      },
+      "explorer-colors-plus": {
+        "name": "Explorer Colors Plus",
+        "repo": "perezamadorluisenrique-gif/explorer-colors-plus",
+        "description": "Color files and folders in the file explorer, with a palette, cascading to children, and import from File Color. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 333
+      },
+      "folder-counts": {
+        "name": "Folder Counts",
+        "repo": "perezamadorluisenrique-gif/folder-counts",
+        "description": "Show how many notes or files each folder holds in the file explorer, with a vault total, file type filters and folder exclusions. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 804
+      },
+      "hybrid-line-numbers": {
+        "name": "Hybrid Line Numbers",
+        "repo": "perezamadorluisenrique-gif/hybrid-line-numbers",
+        "description": "Relative and hybrid line numbers for Vim-style jumps. A folded section counts as one line, and numbers can turn absolute in Vim insert mode. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 285
+      },
+      "line-editing-commands": {
+        "name": "Line Editing Commands",
+        "repo": "perezamadorluisenrique-gif/line-editing-commands",
+        "description": "Duplicate, join, sort, reverse and clean up lines, insert blank lines and jump to a line number, with multi-cursor support. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 183
+      },
+      "link-title-on-paste": {
+        "name": "Link Title on Paste",
+        "repo": "perezamadorluisenrique-gif/link-title-on-paste",
+        "description": "Pastes a bare URL as a Markdown link with the page title, fetched in the background and undone in one step. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 325
+      },
+      "list-item-callouts": {
+        "name": "List Item Callouts",
+        "repo": "perezamadorluisenrique-gif/list-item-callouts",
+        "description": "Highlight single list items as coloured callouts by starting them with a character such as & ! ? or @. Compatible with List Callouts notes. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 1050
+      },
+      "note-mover-rules": {
+        "name": "Note Mover Rules",
+        "repo": "perezamadorluisenrique-gif/note-mover-rules",
+        "description": "Move notes into folders by ordered rules on tags, properties, titles and paths, with a preview before any bulk move. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 115
+      },
+      "note-reading-time": {
+        "name": "Note Reading Time",
+        "repo": "perezamadorluisenrique-gif/note-reading-time",
+        "description": "Show how long the current note, or your selection, takes to read, in the status bar, with your own reading speed and support for Chinese, Japanese and Korean. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 227
+      },
+      "quick-translate": {
+        "name": "Quick Translate",
+        "repo": "perezamadorluisenrique-gif/quick-translate",
+        "description": "Translate the selection or a whole note into another language with no account, keeping links, code and front matter untouched. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 98
+      },
+      "revisit-later": {
+        "name": "Revisit Later",
+        "repo": "perezamadorluisenrique-gif/revisit-later",
+        "description": "Link the current note into a future daily note, with a date typed in plain English, so it comes back when you want to review it. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 21
+      },
+      "section-numbering": {
+        "name": "Section Numbering",
+        "repo": "perezamadorluisenrique-gif/section-numbering",
+        "description": "Numbers your headings as an outline (1, 1.1, 1.2) and renumbers them when sections move. Links to a renumbered heading, in the note and across the vault, are rewritten so they keep working. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 2404
+      },
+      "shared-blocks": {
+        "name": "Shared Blocks",
+        "repo": "perezamadorluisenrique-gif/shared-blocks",
+        "description": "Reuse one block of text in many notes. Edit the block in its source note and every reference re-renders live. Everything stays in your vault, with no network access. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 324
+      },
+      "spreadsheet-to-table": {
+        "name": "Spreadsheet to Table",
+        "repo": "perezamadorluisenrique-gif/spreadsheet-to-table",
+        "description": "Paste cells from Excel, Google Sheets, Numbers or LibreOffice Calc as a Markdown table with a real header row. Also converts CSV or tab-separated text, and copies a table back out for a spreadsheet. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 1615
+      },
+      "tab-history": {
+        "name": "Tab History",
+        "repo": "perezamadorluisenrique-gif/tab-history",
+        "description": "Keeps each tab's back and forward history across restarts, and adds commands to move, maximize and close tabs. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 63
+      },
+      "task-archive": {
+        "name": "Task Archive",
+        "repo": "perezamadorluisenrique-gif/task-archive",
+        "description": "Moves completed tasks, with their sub-items, into an archive section or note. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 35
+      },
+      "task-rollover": {
+        "name": "Task Rollover",
+        "repo": "perezamadorluisenrique-gif/task-rollover",
+        "description": "Move the unfinished tasks of your last daily note into today's note when it is created, under a heading you choose, with undo, nested items and no duplicates. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 371
+      },
+      "text-format": {
+        "name": "Text Case and Cleanup",
+        "repo": "perezamadorluisenrique-gif/text-format",
+        "description": "Converts the selection between upper, lower, title, sentence and capitalized case, or cycles through them. Also joins wrapped lines, rejoins words split across a line break, strips invisible characters and turns links into plain text. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 1502
+      },
+      "typography-as-you-type": {
+        "name": "Typography as You Type",
+        "repo": "perezamadorluisenrique-gif/smart-typography-plugin",
+        "description": "Converts quotes to curly quotes, dashes to en and em dashes, and periods to an ellipsis as you type. Substitutions keep out of code, math, wikilinks, frontmatter and URLs, and Backspace right afterwards restores exactly what you typed. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 2361
+      },
+      "update-radar": {
+        "name": "Update Radar",
+        "repo": "perezamadorluisenrique-gif/community-update-checker",
+        "description": "Checks your installed community add-ons for updates in the background, shows release notes and flags abandoned ones. A successor to the unmaintained Update Tracker. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 1082
+      },
+      "url-cards": {
+        "name": "URL Cards",
+        "repo": "perezamadorluisenrique-gif/url-cards",
+        "description": "Shows web addresses as cards with title, description and image, and reads existing cardlink blocks. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 42
+      },
+      "vim-config": {
+        "name": "Vim Config",
+        "repo": "perezamadorluisenrique-gif/vim-config",
+        "description": "Loads a vimrc-style file from your vault so your key mappings and editor commands are ready when vim mode starts. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 56
+      },
+      "web-search-menu": {
+        "name": "Web Search Menu",
+        "repo": "perezamadorluisenrique-gif/web-search-menu",
+        "description": "Search the web for selected text or the note title from the right-click menu, with engines you define. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 87
+      },
+      "word-lookup": {
+        "name": "Word Lookup",
+        "repo": "perezamadorluisenrique-gif/word-lookup",
+        "description": "Look up any word in a sidebar dictionary with definitions, phonetics, synonyms and antonyms, or create a note for it. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 33
+      },
+      "zoom-into-section": {
+        "name": "Zoom Into Section",
+        "repo": "perezamadorluisenrique-gif/zoom-into-section",
+        "description": "Zoom into a heading or list item to see only it and its contents, with a breadcrumb bar to climb back out. Works without turning on any fold settings. - This plugin has not been manually reviewed by Obsidian staff.",
+        "downloads": 330
+      }
+    },
+    "plugin_totals": {
+      "count": 29,
+      "downloads": 14212
+    },
+    "lab": {
+      "apps": []
+    }
+  }
+}
