@@ -1,0 +1,346 @@
+{
+  "schema": 1,
+  "week": "2026-W39",
+  "source": "backfill",
+  "user": "perezamadorluisenrique-gif",
+  "captured_at": "2026-10-24T14:01:00.851Z",
+  "partial": false,
+  "range": {
+    "start": "2026-09-21T00:00:00.000Z",
+    "end": "2026-09-28T00:00:00.000Z"
+  },
+  "errors": [],
+  "activity": {
+    "commits": {
+      "total": 43,
+      "days_active": 3,
+      "by_repo": {
+        "text-format": 7,
+        "section-numbering": 6,
+        "shared-blocks": 6,
+        "smart-typography-plugin": 6,
+        "spreadsheet-to-table": 6,
+        "hybrid-line-numbers": 5,
+        "list-item-callouts": 4,
+        "folder-counts": 2,
+        "claimable": 1
+      }
+    },
+    "releases": [
+      {
+        "repo": "shared-blocks",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-09-21T01:01:33Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-09-21T01:01:44Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-09-21T01:01:54Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-09-23T09:23:23Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.1.2",
+        "name": "0.1.2",
+        "date": "2026-09-23T09:26:12Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.1.2",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-09-23T09:48:10Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "shared-blocks",
+        "tag": "0.2.1",
+        "name": "0.2.1",
+        "date": "2026-09-23T18:27:59Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks/releases/tag/0.2.1",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.1.2",
+        "name": "0.1.2",
+        "date": "2026-09-23T18:28:50Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.1.2",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.1.3",
+        "name": "0.1.3",
+        "date": "2026-09-23T18:32:55Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.1.3",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.1.2",
+        "name": "0.1.2",
+        "date": "2026-09-23T18:33:38Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.1.2",
+        "prerelease": false
+      },
+      {
+        "repo": "spreadsheet-to-table",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-09-23T18:34:29Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.1.3",
+        "name": "0.1.3",
+        "date": "2026-09-24T09:18:46Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.1.3",
+        "prerelease": false
+      },
+      {
+        "repo": "hybrid-line-numbers",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-09-26T09:54:51Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/hybrid-line-numbers/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "shared-blocks",
+        "tag": "0.2.3",
+        "name": "0.2.3",
+        "date": "2026-09-26T10:01:49Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks/releases/tag/0.2.3",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.2.2",
+        "name": "0.2.2",
+        "date": "2026-09-26T10:02:15Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.2.2",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.1.5",
+        "name": "0.1.5",
+        "date": "2026-09-26T10:02:35Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.1.5",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.1.5",
+        "name": "0.1.5",
+        "date": "2026-09-26T10:03:02Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.1.5",
+        "prerelease": false
+      },
+      {
+        "repo": "spreadsheet-to-table",
+        "tag": "0.1.2",
+        "name": "0.1.2",
+        "date": "2026-09-26T10:03:22Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table/releases/tag/0.1.2",
+        "prerelease": false
+      },
+      {
+        "repo": "shared-blocks",
+        "tag": "0.3.0",
+        "name": "0.3.0",
+        "date": "2026-09-27T14:15:37Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks/releases/tag/0.3.0",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.3.0",
+        "name": "0.3.0",
+        "date": "2026-09-27T14:16:13Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.3.0",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-09-27T14:16:33Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-09-27T14:16:52Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "spreadsheet-to-table",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-09-27T14:17:15Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "hybrid-line-numbers",
+        "tag": "0.2.0",
+        "name": "0.2.0",
+        "date": "2026-09-27T14:19:18Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/hybrid-line-numbers/releases/tag/0.2.0",
+        "prerelease": false
+      },
+      {
+        "repo": "shared-blocks",
+        "tag": "0.4.0",
+        "name": "0.4.0",
+        "date": "2026-09-27T15:11:59Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks/releases/tag/0.4.0",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.3.0",
+        "name": "0.3.0",
+        "date": "2026-09-27T15:12:59Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.3.0",
+        "prerelease": false
+      },
+      {
+        "repo": "section-numbering",
+        "tag": "0.3.0",
+        "name": "0.3.0",
+        "date": "2026-09-27T15:13:15Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering/releases/tag/0.3.0",
+        "prerelease": false
+      },
+      {
+        "repo": "spreadsheet-to-table",
+        "tag": "0.3.0",
+        "name": "0.3.0",
+        "date": "2026-09-27T15:14:26Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table/releases/tag/0.3.0",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.3.1",
+        "name": "0.3.1",
+        "date": "2026-09-27T15:14:50Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.3.1",
+        "prerelease": false
+      },
+      {
+        "repo": "list-item-callouts",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-09-27T15:17:34Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/list-item-callouts/releases/tag/0.1.0",
+        "prerelease": false
+      },
+      {
+        "repo": "list-item-callouts",
+        "tag": "0.1.1",
+        "name": "0.1.1",
+        "date": "2026-09-27T15:37:51Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/list-item-callouts/releases/tag/0.1.1",
+        "prerelease": false
+      },
+      {
+        "repo": "smart-typography-plugin",
+        "tag": "0.3.1",
+        "name": "0.3.1",
+        "date": "2026-09-27T15:38:22Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/smart-typography-plugin/releases/tag/0.3.1",
+        "prerelease": false
+      },
+      {
+        "repo": "text-format",
+        "tag": "0.3.2",
+        "name": "0.3.2",
+        "date": "2026-09-27T15:38:53Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/text-format/releases/tag/0.3.2",
+        "prerelease": false
+      },
+      {
+        "repo": "shared-blocks",
+        "tag": "0.4.1",
+        "name": "0.4.1",
+        "date": "2026-09-27T15:39:21Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/shared-blocks/releases/tag/0.4.1",
+        "prerelease": false
+      },
+      {
+        "repo": "folder-counts",
+        "tag": "0.1.0",
+        "name": "0.1.0",
+        "date": "2026-09-27T20:42:21Z",
+        "url": "https://github.com/perezamadorluisenrique-gif/folder-counts/releases/tag/0.1.0",
+        "prerelease": false
+      }
+    ],
+    "new_repos": [
+      {
+        "name": "section-numbering",
+        "url": "https://github.com/perezamadorluisenrique-gif/section-numbering",
+        "description": "",
+        "created_at": "2026-09-23T09:19:00Z"
+      },
+      {
+        "name": "spreadsheet-to-table",
+        "url": "https://github.com/perezamadorluisenrique-gif/spreadsheet-to-table",
+        "description": "",
+        "created_at": "2026-09-23T18:14:15Z"
+      },
+      {
+        "name": "hybrid-line-numbers",
+        "url": "https://github.com/perezamadorluisenrique-gif/hybrid-line-numbers",
+        "description": "Relative and hybrid line numbers for Obsidian. A folded section counts as one line, and numbers can turn absolute in Vim insert mode.",
+        "created_at": "2026-09-26T09:46:27Z"
+      },
+      {
+        "name": "list-item-callouts",
+        "url": "https://github.com/perezamadorluisenrique-gif/list-item-callouts",
+        "description": "Obsidian plugin: highlight single list items as coloured callouts by starting them with a character such as & ! ? or @. Compatible with List Callouts notes.",
+        "created_at": "2026-09-27T14:52:05Z"
+      },
+      {
+        "name": "folder-counts",
+        "url": "https://github.com/perezamadorluisenrique-gif/folder-counts",
+        "description": "Obsidian plugin: see how many notes each folder holds, right in the file explorer.",
+        "created_at": "2026-09-27T20:40:01Z"
+      }
+    ],
+    "issues": null
+  },
+  "state": null
+}
